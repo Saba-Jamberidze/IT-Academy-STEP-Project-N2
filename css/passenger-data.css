@@ -1,0 +1,336 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .first-section {
+  margin: 30px 0 30px 0;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #224d80;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 50px;
+}
+main .first-section h1 {
+  color: white;
+  text-align: center;
+}
+main .second-section {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+main .second-section .main-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 30px;
+  background-color: #224d80;
+  border-radius: 50px;
+}
+main .second-section .main-info h2 {
+  font-size: 20px;
+  color: white;
+  background: none;
+  padding: 10px 0px;
+  border-radius: 50px;
+}
+main .second-section .main-info table {
+  width: 100%;
+  text-align: left;
+}
+main .second-section .main-info table .tr-by-java {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  border-radius: 50px;
+  background-color: white;
+  color: #224d80;
+  padding: 0 10px;
+  border-bottom: 2px solid #224d80;
+}
+main .second-section .main-info table .tr-by-java th {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+  width: 100%;
+}
+main .second-section .main-info table .tr-by-java th span {
+  display: block;
+  border-left: 2px solid #224d80;
+  padding-left: 10px;
+}
+main .second-section .main-info table .tr-by-java th .border-none {
+  border: none;
+}
+main .second-section .main-info table .tr-by-java .th4 {
+  display: none;
+}
+main .second-section .main-info .contact-info {
+  display: flex;
+  gap: 2px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+main .second-section .main-info .contact-info input {
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+main .second-section .main-info .people h3 {
+  color: white;
+  padding: 10px;
+  border-top: 2px dashed white;
+  margin-top: 20px;
+}
+main .second-section .main-info .people .person-id-cont {
+  color: #224d80;
+  width: 100%;
+}
+main .second-section .main-info .people .person-id-cont div {
+  border-radius: 50px;
+  overflow: hidden;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: 50px;
+  margin-bottom: 10px;
+}
+main .second-section .main-info .people .person-id-cont div .span-cont {
+  padding: 10px;
+}
+main .second-section .main-info .people .person-id-cont div .span-in-span {
+  margin: 5px;
+  background: #224d80;
+  color: white;
+  padding: 5px 20px;
+  border-radius: 50px;
+  text-align: center;
+}
+main .second-section .main-info .people .person-id-cont .second-div {
+  background-color: white;
+}
+main .second-section .main-info .people .person-id-cont input {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-left: 2px solid #224d80;
+}
+main .second-section .main-info .people .person-id-cont input[name=name] {
+  border: none;
+}
+main .second-section .pey {
+  width: 300px;
+  height: 300px;
+  background-color: #224d80;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+main .second-section .pey h2 {
+  text-align: center;
+}
+main .second-section .pey .info {
+  padding: 20px;
+  color: #224d80;
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main .second-section .pey .info .pay-total {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  text-align: right;
+  outline: none;
+}
+main .second-section .pey .agree {
+  text-align: center;
+  margin: 0 10px;
+}
+main .second-section .pey button {
+  font-size: 16px;
+  border-radius: 50px;
+  background-color: white;
+  border: none;
+  color: #224d80;
+  padding: 10px;
+  margin: 0 10px;
+}
+.Choose-a-seat {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.Choose-a-seat .beckgroubd {
+  background-color: rgba(0, 0, 0, 0.819);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+.Choose-a-seat .mein-information-div {
+  scale: 0.6;
+  transform-origin: top left;
+  position: absolute;
+  width: 500px;
+  background-color: white;
+  color: #224d80;
+  border-radius: 50px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.Choose-a-seat .mein-information-div .train-vagons {
+  flex-shrink: 0;
+}
+.Choose-a-seat .mein-information-div .train-vagons .x {
+  display: flex;
+  justify-content: end;
+  margin: 0 10px 20px 0;
+}
+.Choose-a-seat .mein-information-div .train-vagons .train {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.Choose-a-seat .mein-information-div .train-vagons .train div {
+  height: 73px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.Choose-a-seat .mein-information-div .train-vagons .train div img {
+  width: 140px;
+}
+.Choose-a-seat .mein-information-div .train-vagons .train div span {
+  display: none;
+  padding: 5px 10px;
+  background-color: #224d80;
+  color: white;
+  border-radius: 50px;
+}
+.Choose-a-seat .mein-information-div .train-vagons .train div:hover span {
+  display: block;
+}
+.Choose-a-seat .mein-information-div .seats-div h2 {
+  text-align: center;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats {
+  display: none;
+  font-size: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  gap: 40px;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .toilet {
+  display: block;
+  background-color: #224d80;
+  color: white;
+  width: 150px;
+  height: 37.2px;
+  padding: 5px;
+  text-align: center;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-1, .Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-1 span, .Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-2 span {
+  background-color: #224d80;
+  color: white;
+  margin: 5px;
+  width: 50px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 2px solid #224d80;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-1 span:hover, .Choose-a-seat .mein-information-div .seats-div .seats .seats-cont .lines .line-2 span:hover {
+  background-color: white;
+  color: #224d80;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .l1 {
+  border-left: 4px solid #224d80;
+  border-radius: 20px 0px 0 20px;
+  overflow: hidden;
+}
+.Choose-a-seat .mein-information-div .seats-div .seats .l2 {
+  border-right: 4px solid #224d80;
+  border-radius: 0px 20px 20px 0px;
+  overflow: hidden;
+}
+.Choose-a-seat .mein-information-div {
+  top: calc(50vh - 234.06px);
+  left: calc(50vw - 150px);
+}
+
+@media (max-width: 767px) {
+  main .first-section h1 {
+    font-size: 20px;
+  }
+  main .second-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .second-section .main-info table .tr-by-java {
+    flex-direction: column;
+  }
+  main .second-section .main-info table .tr-by-java th span {
+    border-left: none;
+  }
+  main .second-section .main-info .contact-info {
+    overflow: visible;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .second-section .main-info .contact-info input {
+    border-radius: 50px;
+  }
+  main .second-section .main-info .persons .person-id-cont div {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+  }
+  main .second-section .main-info .persons .person-id-cont div input {
+    border-radius: 50px;
+  }
+  main .second-section .main-info .persons .person-id-cont .second-div {
+    flex-direction: row;
+  }
+  main .second-section .main-info .persons .person-id-cont .span-cont {
+    width: 100%;
+  }
+}/*# sourceMappingURL=passenger-data.css.map */

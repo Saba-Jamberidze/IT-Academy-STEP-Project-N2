@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- index.html — მთავარი გვერდი: მატარებლის ბილეთის ძიების ფორმა (საიდან, სად, თარიღი, მგზავრების რაოდენობა) -->
+<html lang="en">
+<head>
+    <!-- ბაზური meta და ფონტები -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <!-- Font Awesome — ხატულები; style-for-all — გლობალური სტილები; index — ამ გვერდის სტილები -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-for-all.css">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- ნავიგაცია: ფიქსირებული ზედა ზოლი, ლინკები და burger მენიუ მობილურზე -->
+    <nav class="shadow">
+        <a href="#footer" class="nav-link shadow">ინფორმაცია ჩვენს შესახებ</a>
+        <a href="./index.html" class="logo"><img src="./PNG-SVG/TICKET2.svg" alt="ლოგო"></a>
+        <a href="./ticket-check.html" class="nav-link shadow">ბილეთის შემოწმება/დაბრუნება</a>
+
+        <!-- burger მენიუ — მობილურ ეკრანებზე გამოჩნდება, დესკტოპზე დამალული -->
+        <div class="burger">
+            <span id="burgerIco"><i class="fa-solid fa-bars"></i></span>
+            <div id="burgerNav" class="burger-cont ">
+                <span id="burgerIcoX"><i class="fa-solid fa-x"></i></span>
+                <div>
+                    <a class="burger-a shadow" href="./index.html" class="logo"><img src="./PNG-SVG/TICKET.svg" alt=""></a>
+                    <a id="closeNav" class="burger-a shadow" href="#footer">ინფორმაცია ჩვენს შესახებ</a>
+                    <a class="burger-a shadow" href="./ticket-check.html">ბილეთის შემოწმება/დაბრუნება</a> 
+                </div>
+                <div class="ear"></div>
+            </div>
+        </div>
+
+    </nav>
+    <!-- nav-cont — ცარიელი div, რომელიც იკავებს ადგილს fixed nav-ის ქვეშ და main არ გადაიფარება -->
+    <div class="nav-cont"></div>
+
+    <main>
+        <!-- პირველი სექცია: ჰერო სურათი, სათაური და ძიების ფორმა -->
+        <section class="first-section">
+            <div class="first-section-cont">
+                <!-- index-img — ჰერო სურათი; color — გადაფარვა -->
+                <div class="index-img shadow">
+                    <img src="./PNG-SVG/Train.jpg" alt="მატარებელი">
+                    <div class="color"></div>
+                </div>
+                <div class="title-h1 shadow">
+                    <h1>მატარებლის ოფიციალური ბილეთი მარტივად</h1>
+                    <p>გისურვებთ ბედნიერ მგზავრობას</p>
+                </div>
+                <!-- form-cont — ძიების ფორმა: საიდან, სად, თარიღი, მგზავრების რაოდენობა -->
+                <div class="form-cont">
+                    <form action="" class="shadow" id="indexForm">
+                        <!-- from-to — გამგზავრების ქალაქის dropdown (formChooser) -->
+                        <div class="from-to shadow">
+                            <div class="from-to-cont">
+                                <div class="from-to-1 pointer" id="formChooser">
+                                    <span><i class="fa-solid fa-house"></i></span>
+                                    <input class="pointer" type="text" name="from" id="from" placeholder="საიდან" readonly required>
+                                </div>
+                                <div class="from-to-2 slide" id="formChooserConteiner">
+                                    <span class="pointer" id="tbilisiFrom">თბილისი</span>
+                                    <span class="pointer" id="batumiFrom">ბათუმი</span>
+                                    <span class="pointer" id="potiFrom">ფოთი</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- from-to — დანიშნულების ქალაქის dropdown (toChooser) -->
+                        <div class="from-to shadow">
+                            <div class="from-to-cont pointer" id="toChooser">
+                                <div class="from-to-1">
+                                    <span><i class="fa-solid fa-location-dot"></i></span>
+                                    <input class="pointer" type="text" name="to" id="to" placeholder="სად" readonly required>
+                                </div>
+                                <div class="from-to-2 slide" id="toChooserConteiner">
+                                    <span class="pointer" id="tbilisiTo">თბილისი</span>
+                                    <span class="pointer" id="batumiTo">ბათუმი</span>
+                                    <span class="pointer" id="potiTo">ფოთი</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- date — მგზავრობის თარიღი; number-of-passengers-div — მგზავრების +/- ღილაკები -->
+                        <input type="date" name="date" id="date" class="date pointer shadow" required>
+                        <div class="number-of-passengers-div shadow">
+                            <span  id="minusNumbers"><i class="fa-solid fa-minus"></i></span>
+                            <input type="number" name="number" id="number" value="1" required>
+                            <span id="plusNumbers"><i class="fa-solid fa-plus"></i></span>
+                        </div>
+                        <button class="shadow pointer">მატარებლის მოძებნა</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        <!-- second-section — ინფორმაცია ბილეთების შესაძენად (პირადი ნომერი და სარგებელი) -->
+        <section class="second-section ">
+            <div class="second-section-cont shadow">
+                <h2>მატარებლის ბილეთები</h2>
+                <div class="info">
+                    <img src="./PNG-SVG/Luggage2.svg" alt="">
+                    <div class="info-text" >
+                        <p class="p1 shadow">რკინიგზის ბილეთების შესაძენად თქვენ დაგჭირებათ თითოეული მგზავრის პირადი ნომერი. გთხოვთ მოამზადოთ ეს ინფორმაცია წინასწარ.</p>
+                        <div class="info-text-2 ">
+                            <div class="cont">
+                                <span class="span-borom-m">
+                                    <i class="fa-solid fa-envelope-open"></i>
+                                    <p>შეუზღუდავი შეთვაზებები</p>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-anchor-circle-check"></i>
+                                    <p>100% <br>უსაფრთხო</p>
+                                </span>
+                            </div>
+                            <div class="cont">
+                                <span class="span-borom-m">
+                                    <i class="fa-solid fa-clock"></i>
+                                    <p>24/7 <br> მხარდაჭერა</p>
+                                </span>
+                                <span>
+                                    <i class="fa-solid fa-dollar-sign"></i>
+                                    <p>100% უსაბრთხო გადახდა</p>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- footer — კონტაქტი, საავტორო უფლებები; id="footer" საჭიროა nav-ის ლინკისთვის -->
+    <footer id="footer">
+        <h2>ინფორმაცია ჩვენს შესახებ</h1>
+        <div class="footer-cont">
+            <div>
+                <p>Director: Saba Jamberidze</p>
+                <p>All rights reserved</p>
+            </div>
+            <div>
+                <p class="footer-p-2">IT Academy STEP Project N2</p>
+                <p class="footer-p-2">Copyright © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script-nav.js — burger მენიუ და loading overlay; index.js — ფორმის ლოგიკა -->
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- passenger-data.html — მგზავრების მონაცემების გვერდი: სახელი, გვარი, პირადი ნომერი, ადგილის არჩევა; payload ინახება localStorage-ში payment-ისთვის -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-for-all.css">
+    <link rel="stylesheet" href="./css/passenger-data.css">
+</head>
+<body>
+    <nav class="shadow">
+        <a href="#footer" class="nav-link shadow">ინფორმაცია ჩვენს შესახებ</a>
+        <a href="./index.html" class="logo"><img src="./PNG-SVG/TICKET2.svg" alt=""></a>
+        <a href="./ticket-check.html" class="nav-link shadow">ბილეთის შემოწმება/დაბრუნება</a>
+
+        <div class="burger">
+            <span id="burgerIco"><i class="fa-solid fa-bars"></i></span>
+            <div id="burgerNav" class="burger-cont">
+                <span id="burgerIcoX"><i class="fa-solid fa-x"></i></span>
+                <div>
+                    <a class="burger-a shadow" href="./index.html" class="logo"><img src="./PNG-SVG/TICKET.svg" alt=""></a>
+                    <a id="closeNav" class="burger-a shadow" href="#footer">ინფორმაცია ჩვენს შესახებ</a>
+                    <a class="burger-a shadow" href="./ticket-check.html">ბილეთის შემოწმება/დაბრუნება</a> 
+                </div>
+                <div class="ear"></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="nav-cont"></div>
+
+    <main>
+        <!-- first-section — სათაური -->
+        <section class="first-section shadow">
+            <h1>მგზავრების მონაცემები</h1>
+        </section>
+        <!-- form — მთავარი ფორმა; main-info — მატარებლის დეტალები, საკონტაქტო ინფო, მგზავრები -->
+        <form class="second-section" id="form">
+            <div class="main-info shadow">
+                <h2>შეიყვანეთ თქვენი მონაცემები</h2>
+                <table>
+                    <tr class="tr-by-java shadow">
+                        <th class="th1">
+                            <span id="trainNumber" class="border-none"></span>
+                            <span id="trainName" class="border-none"></span>
+                        </th>
+                        <th class="th2">
+                            <span id="trainDeparture"></span>
+                            <span id="from"></span>
+                        </th>
+                        <th class="th3">
+                            <span id="trainArrive"></span>
+                            <span id="to"></span>
+                        </th>
+                        <th class="th4"><button></button></th>
+                    </tr>
+                </table>
+                <h2>საკონტაქტო ინფორმაცია</h2>
+                <div class="contact-info shadow">
+                    <input type="email" name="email" id="email" placeholder="იმეილი" required>
+                    <input type="number" name="phoneNumber" id="phoneNumber" placeholder="ტელეფონის ნომერი" required>
+                </div>
+                <h2>მგზავრების ინფორმაცია</h2>
+                <!-- peopleDiv — JS (humans()) დინამიურად ამატებს მგზავრების ფორმებს -->
+                <div class="people" id="peopleDiv">
+                </div>
+            </div>
+            <div class="pey shadow">
+                <h2>ინვოისი</h2>
+                <div class="info shadow">
+                    <span>სულ:</span>
+                    <input id="totalPrice" class="pay-total" type="text" value="0.00₾" readonly required>
+                </div>
+                <div class="agree">
+                    <span><input class="pointer" type="checkbox" required></i> <span>წავიკითხე და ვეთანხმები წესებს</span></span>
+                </div>
+                <button class="shadow pointer">ბილეთების რეგისტრაცია</button>
+            </div>
+        </form>
+    </main>
+
+    <!-- choseAseet — მოდალური ფანჯარა ადგილის არჩევისთვის; exit1, exit2 — დახურვის ზონები -->
+    <div class="Choose-a-seat" id="choseAseet">
+            <div class="beckgroubd"  id="exit2"></div>
+            <div class="mein-information-div">
+                <!-- train-vagons — ვაგონის კლასების არჩევა (I კლასი, II კლასი, ბიზნესი) -->
+                <div class="train-vagons">
+                    <span class="x" id="exit1"><i class="fa-solid fa-x"></i></span>
+                    <div class="train">
+                        <div id="fearstClas">
+                            <img src="./PNG-SVG/train front 1.png" alt="">
+                            <span>I კლასი</span>
+                        </div>
+                        <div id="secondClas">
+                            <img src="./PNG-SVG/train midle.png" alt="">
+                            <span>II კლასი</span>
+                        </div>
+                        <div id="biznes">
+                            <img src="./PNG-SVG/train front 2.png" alt="">
+                            <span>ბიზნესი</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- seats-div — ადგილების grid (4x10: A,B,C,D x 1-10); h1 — ინსტრუქცია -->
+                <div class="seats-div">
+                    <h2 id="h1">გთხოვთ აირჩიოთ ვაგონი</h2>
+                    <div class="seats" id="seats">
+                        <div class="seats-cont l1">
+                            <span class="toilet">Toilet</span>
+                            <div class="lines">
+                                <div class="line-1">
+                                    <span class="pointer" id="seat1A" >1A</span>
+                                    <span class="pointer" id="seat2A" >2A</span>
+                                    <span class="pointer" id="seat3A" >3A</span>
+                                    <span class="pointer" id="seat4A" >4A</span>
+                                    <span class="pointer" id="seat5A" >5A</span>
+                                    <span class="pointer" id="seat6A" >6A</span>
+                                    <span class="pointer" id="seat7A" >7A</span>
+                                    <span class="pointer" id="seat8A" >8A</span>
+                                    <span class="pointer" id="seat9A" >9A</span>
+                                    <span class="pointer" id="seat10A" >10A</span>
+                                </div>
+                                <div class="line-2">
+                                    <span class="pointer" id="seat1B" >1B</span>
+                                    <span class="pointer" id="seat2B" >2B</span>
+                                    <span class="pointer" id="seat3B" >3B</span>
+                                    <span class="pointer" id="seat4B" >4B</span>
+                                    <span class="pointer" id="seat5B" >5B</span>
+                                    <span class="pointer" id="seat6B" >6B</span>
+                                    <span class="pointer" id="seat7B" >7B</span>
+                                    <span class="pointer" id="seat8B" >8B</span>
+                                    <span class="pointer" id="seat9B" >9B</span>
+                                    <span class="pointer" id="seat10B" >10B</span>
+                                </div>
+                            </div>
+                            <span class="toilet"></span>
+                        </div>
+                        <div class="seats-cont l2">
+                            <span class="toilet"></span>
+                            <div class="lines">
+                                <div class="line-1">
+                                    <span class="pointer" id="seat1C" >1C</span>
+                                    <span class="pointer" id="seat2C" >2C</span>
+                                    <span class="pointer" id="seat3C" >3C</span>
+                                    <span class="pointer" id="seat4C" >4C</span>
+                                    <span class="pointer" id="seat5C" >5C</span>
+                                    <span class="pointer" id="seat6C" >6C</span>
+                                    <span class="pointer" id="seat7C" >7C</span>
+                                    <span class="pointer" id="seat8C" >8C</span>
+                                    <span class="pointer" id="seat9C" >9C</span>
+                                    <span class="pointer" id="seat10C" >10C</span>
+                                </div>
+                                <div class="line-2">
+                                    <span class="pointer" id="seat1D" >1D</span>
+                                    <span class="pointer" id="seat2D" >2D</span>
+                                    <span class="pointer" id="seat3D" >3D</span>
+                                    <span class="pointer" id="seat4D" >4D</span>
+                                    <span class="pointer" id="seat5D" >5D</span>
+                                    <span class="pointer" id="seat6D" >6D</span>
+                                    <span class="pointer" id="seat7D" >7D</span>
+                                    <span class="pointer" id="seat8D" >8D</span>
+                                    <span class="pointer" id="seat9D" >9D</span>
+                                    <span class="pointer" id="seat10D" >10D</span>
+                                </div>
+
+                            </div>
+                            <span class="toilet">Toilet</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <footer id="footer">
+        <h2>ინფორმაცია ჩვენს შესახებ</h1>
+        <div class="footer-cont">
+            <div>
+                <p>Director: Saba Jamberidze</p>
+                <p>All rights reserved</p>
+            </div>
+            <div>
+                <p class="footer-p-2">IT Academy STEP Project N2</p>
+                <p class="footer-p-2">Copyright © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/passenger-data.js"></script>
+</body>
+</html>

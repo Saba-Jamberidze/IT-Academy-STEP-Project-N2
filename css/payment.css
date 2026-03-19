@@ -1,0 +1,207 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .first-section {
+  margin: 30px 0 30px 0;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #224d80;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+  border-radius: 50px;
+}
+main .first-section h1 {
+  color: white;
+  text-align: center;
+}
+main form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 1000px;
+  background-color: #224d80;
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 40px;
+  border-radius: 50px;
+}
+main form span, main form label, main form input {
+  display: block;
+  margin-bottom: 20px;
+  border: none;
+  width: 100%;
+  text-align: center;
+}
+main form input {
+  width: 100%;
+  font-size: 20px;
+  padding: 20px;
+  border-radius: 50px;
+}
+main form .btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+main form .btn button {
+  font-size: 20px;
+  padding: 20px 40px;
+  border-radius: 50px;
+  color: #224d80;
+  background-color: white;
+  border: none;
+  margin: 20px;
+}
+main form .form {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+main form .form .form-cont {
+  width: 100%;
+}
+main form {
+  display: flex;
+}
+main .ticket {
+  display: none;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 753.5px;
+  margin-bottom: 40px;
+  background-color: #224d80;
+  padding: 40px;
+  padding-left: 160px;
+  border-radius: 50px;
+  justify-content: space-between;
+}
+main .ticket .ticket-cont {
+  width: 126mm;
+  min-height: 178.2mm;
+  max-height: 100%;
+  padding: 12mm;
+  font-size: 8.4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .ticket .ticket-cont .d1, main .ticket .ticket-cont .d2, main .ticket .ticket-cont .d3, main .ticket .ticket-cont .d4, main .ticket .ticket-cont .d5, main .ticket .ticket-cont .d6, main .ticket .ticket-cont .d7, main .ticket .ticket-cont .d18, main .ticket .ticket-cont .in-d6 {
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+main .ticket .ticket-cont .d1 div, main .ticket .ticket-cont .d2 div, main .ticket .ticket-cont .d3 div, main .ticket .ticket-cont .d4 div, main .ticket .ticket-cont .d5 div, main .ticket .ticket-cont .d6 div, main .ticket .ticket-cont .d7 div, main .ticket .ticket-cont .d18 div, main .ticket .ticket-cont .in-d6 div {
+  width: 100%;
+}
+main .ticket .ticket-cont span {
+  display: block;
+}
+main .ticket .ticket-cont .d3, main .ticket .ticket-cont .d5 {
+  border: 0.6px solid #224d80;
+  padding: 12px;
+}
+main .ticket .ticket-cont .d3 span, main .ticket .ticket-cont .d5 span {
+  padding-left: 6px;
+  border-left: 0.6px solid #224d80;
+}
+main .ticket .ticket-cont .d3 .border-non, main .ticket .ticket-cont .d5 .border-non {
+  border: none;
+}
+main .ticket .ticket-cont .d6 {
+  display: flex;
+  flex-direction: column;
+}
+main .ticket .ticket-cont .d6 .header {
+  margin: 12px;
+}
+main .ticket .ticket-cont .d6 .in-d6 {
+  border: 0.6px solid #224d80;
+  padding: 10px;
+}
+main .ticket .ticket-cont .d6 .in-d6 div {
+  border-right: 0.6px solid #224d80;
+  padding-left: 5px;
+}
+main .ticket .ticket-cont .d6 .in-d6 .border-non {
+  border: none;
+}
+main .ticket .ticket-cont .d1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .ticket .ticket-cont .d1 img {
+  width: 36px;
+  height: 25.45px;
+}
+main .ticket .ticket-cont .d7 .d7-2 span {
+  text-align: end;
+}
+main .ticket .get {
+  display: flex;
+  flex-direction: column;
+}
+main .ticket .get button {
+  border: none;
+  background-color: white;
+  color: #224d80;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  main h1 {
+    font-size: 16px;
+  }
+  main form .form .form-cont label, main form .form .form-cont input {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  main form .form .form-cont input {
+    padding: 10px;
+  }
+  main form .btn button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+  }
+  main .ticket {
+    display: none;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 40px;
+    max-width: 500px;
+  }
+  main .ticket .ticket-cont {
+    padding: 20px;
+    width: 100%;
+  }
+  main .ticket .get {
+    flex-direction: row;
+    justify-content: center;
+  }
+  main .ticket .get span {
+    margin: 0;
+  }
+}
+@media (max-width: 520px) {
+  main form .form {
+    flex-direction: column;
+    gap: 0;
+  }
+}/*# sourceMappingURL=payment.css.map */

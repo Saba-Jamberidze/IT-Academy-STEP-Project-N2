@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!-- ticket-check.html — ბილეთის შემოწმება/დაბრუნება: ბილეთის ID-ით API-დან სტატუსი, ბეჭდვა, გადმოწერა, გაუქმება -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-for-all.css">
+    <link rel="stylesheet" href="./css/ticket-check.css">
+</head>
+<body>
+    <nav class="shadow">
+        <a href="#footer" class="nav-link shadow">ინფორმაცია ჩვენს შესახებ</a>
+        <a href="./index.html" class="logo"><img src="./PNG-SVG/TICKET2.svg" alt=""></a>
+        <a href="./ticket-check.html" class="nav-link shadow">ბილეთის შემოწმება/დაბრუნება</a>
+
+        <div class="burger">
+            <span id="burgerIco"><i class="fa-solid fa-bars"></i></span>
+            <div id="burgerNav" class="burger-cont">
+                <span id="burgerIcoX"><i class="fa-solid fa-x"></i></span>
+                <div>
+                    <a class="burger-a shadow" href="./index.html" class="logo"><img src="./PNG-SVG/TICKET.svg" alt=""></a>
+                    <a id="closeNav" class="burger-a shadow" href="#footer">ინფორმაცია ჩვენს შესახებ</a>
+                    <a class="burger-a shadow" href="./ticket-check.html">ბილეთის შემოწმება/დაბრუნება</a> 
+                </div>
+                <div class="ear"></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="nav-cont"></div>
+
+    <main>
+        <!-- csckForm — ბილეთის ID-ის შეყვანა; ticetid — input -->
+        <form id="csckForm">
+            <div>
+                <label for="ticetid">ბილეთის ნომერი</label>
+                <input class="shadow" type="text" id="ticetid" placeholder="მიუთითეთ ბილეთის ნომერი">
+            </div>
+            <button class="shadow pointer">ბილეთის შემოწმება</button>
+        </form>
+        <!-- ticket — კონტეინერი; notFound — შეცდომის შეტყობინება; dileted — გაუქმების შეტყობინება -->
+        <div class="ticket shadow">
+            <span class="nSpan" id="notFound">ბილეთი ვერ მოიძებნა, სცადეთ სხვა ბილეთი</span>
+            <span class="nSpan" id="dileted">ბილეთი წარმატებით გაუქმდა</span>
+            <section  id="ticketSection">
+                <div class="ticket-cont" id="ticket">
+                    <div>
+                        <div class="d1">
+                            <span>Railway</span>
+                            <img src="./PNG-SVG/logo.png" alt="">
+                        </div>
+                        <div class="d2">
+                            <span>
+                                <span>ბილეთის ნომერი: </span><span id="ticketId">----------------------</span>
+                            </span>
+                            <span>
+                                <span>გაცემის თარიღი: </span><span id="issueDate">----------------</span>
+                            </span>
+                        </div>
+                        <div class="d3">
+                            <div>
+                                <span class="border-non">გამგზავრება:</span><span class="border-non" id="fromCity">------------------</span>
+                            </div>
+                            <div>
+                                <span>ჩასვლა:</span><span id="toCity">-------------------</span>
+                            </div>
+                            <div>
+                                <span>გასვლის თარიღი:</span>
+                                <span id="departureDate">------------------</span>
+                            </div>
+                        </div>
+                        <span class="d4">საკონტაქტო ინფორმაცია:</span>
+                        <div class="d5">
+                            <div>
+                                <span class="border-non">იმეილი: </span><span class="border-non" id="contactEmail">--------------------------</span>
+                            </div>
+                            <div>
+                                <span>ტელ. ნომერი: </span><span id="contactPhone">-----------------------</span>
+                            </div>
+                        </div>
+                        <div class="d6">
+                            <span class="header">მგზავრები:</span>
+                            <div id="passengersBox">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="d7">
+                            <div class="d7-2">
+                                <span>სულ გადახდილი</span>
+                                <span id="totalPaid">----------------------------</span>
+                            </div>
+                        </div>
+                        <div class="d8">
+                            <span>ინვოისი იქმნება კომპიუტერის მიერ და ვალიდურია ბეჭედის და ხელმოწერის გარეშე</span>
+                            <span>გადმოწერეთ ბილეთი ან შეინახეთ ბილეთის ნომერი ადგილზე წარსადგენად.</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- get — ღილაკები: ბეჭდვა, გადმოწერა, გაუქმება (dilate) -->
+                <div class="get">
+                    <button class="pointer" onclick="printDiv()"><i class="fa-solid fa-print"></i></button>
+                    <button class="pointer" onclick="downloadDiv()"><i class="fa-solid fa-download"></i></button>
+                    <button class="pointer" id="dilate" style="color: red;"><i class="fa-solid fa-trash-can"></i></button>
+                </div>
+            </section>
+        </div>
+        <div class="ticket-spacer" id="ticketSpacer" aria-hidden="true"></div>
+    </main>
+
+    <footer id="footer">
+        <h2>ინფორმაცია ჩვენს შესახებ</h1>
+        <div class="footer-cont">
+            <div>
+                <p>Director: Saba Jamberidze</p>
+                <p>All rights reserved</p>
+            </div>
+            <div>
+                <p class="footer-p-2">IT Academy STEP Project N2</p>
+                <p class="footer-p-2">Copyright © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/ticket-check.js"></script>
+</body>
+</html>

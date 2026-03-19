@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!-- train-choosing.html — მატარებლის არჩევის გვერდი: localStorage-დან მიღებული from/to/date-ით API-დან იტვირთება მატარებლების სია -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-for-all.css">
+    <link rel="stylesheet" href="./css/train-choosing.css">
+</head>
+<body>
+    <nav class="shadow">
+        <a href="#footer" class="nav-link shadow">ინფორმაცია ჩვენს შესახებ</a>
+        <a href="./index.html" class="logo"><img src="./PNG-SVG/TICKET2.svg" alt=""></a>
+        <a href="./ticket-check.html" class="nav-link shadow">ბილეთის შემოწმება/დაბრუნება</a>
+
+        <div class="burger">
+            <span id="burgerIco"><i class="fa-solid fa-bars"></i></span>
+            <div id="burgerNav" class="burger-cont">
+                <span id="burgerIcoX"><i class="fa-solid fa-x"></i></span>
+                <div>
+                    <a class="burger-a shadow" href="./index.html" class="logo"><img src="./PNG-SVG/TICKET.svg" alt=""></a>
+                    <a id="closeNav" class="burger-a shadow" href="#footer">ინფორმაცია ჩვენს შესახებ</a>
+                    <a class="burger-a shadow" href="./ticket-check.html">ბილეთის შემოწმება/დაბრუნება</a> 
+                </div>
+                <div class="ear"></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="nav-cont"></div>
+
+    <main>
+        <!-- first-section — სათაური "აირჩიეთ მატარებელი" -->
+        <section class="first-section shadow">
+            <h1>აირჩიეთ თქვენთვის სასურველი მატარებელი</h1>
+        </section>
+        <!-- second-section — მატარებლების ცხრილი; treinTotFound — შეცდომის შეტყობინება ან სათაური; backToHome — შეცდომისას ჩანს -->
+        <section class="second-section shadow">
+            <h2 id="treinTotFound">მატარებლების ჩამონათვალი</h2>
+            <a id="backToHome" href="./index.html">მთავარ გვერდზე დაბრუნება</a>
+
+            <!-- table-cont — მატარებლების ცხრილი; departuresDiv — JS ამატებს თითო მატარებელს -->
+            <div class="table-cont">
+                <div class="table-names">
+                    <span class="table-information">მატარებლის სახელი</span>
+                    <span class="table-information">გამგზავრება</span>
+                    <span class="table-information">ჩასვლა</span>
+                    <span class="table-information"></span>
+                </div>
+                <div class="departuresDiv" id="departuresDiv">
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer id="footer">
+        <h2>ინფორმაცია ჩვენს შესახებ</h1>
+        <div class="footer-cont">
+            <div>
+                <p>Director: Saba Jamberidze</p>
+                <p>All rights reserved</p>
+            </div>
+            <div>
+                <p class="footer-p-2">IT Academy STEP Project N2</p>
+                <p class="footer-p-2">Copyright © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script-nav.js — burger და loading; train-choosing.js — API ჩატვირთვა და მატარებლების რენდერი -->
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/train-choosing.js"></script>
+</body>
+</html>

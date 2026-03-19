@@ -1,0 +1,181 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .ticket-spacer {
+  min-height: 250mm;
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 753.5px;
+}
+main form {
+  width: 100%;
+  max-width: 1000px;
+  background-color: #224d80;
+  font-size: 20px;
+  color: white;
+  margin: 40px 0;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px;
+}
+main form div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main form div label {
+  margin-bottom: 20px;
+}
+main form div input {
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 500px;
+}
+main form button {
+  background-color: white;
+  border: 0;
+  border-radius: 50px;
+  font-size: 20px;
+}
+main .ticket {
+  border-radius: 50px;
+  margin-bottom: 40px;
+  background-color: #224d80;
+}
+main .ticket .nSpan {
+  display: none;
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  padding: 40px 200px;
+  font-size: 20px;
+  color: white;
+}
+main .ticket section {
+  display: none;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 753.5px;
+  padding: 40px;
+  padding-left: 160px;
+  justify-content: space-between;
+}
+main .ticket section .ticket-cont {
+  width: 126mm;
+  min-height: 178.2mm;
+  max-height: 100%;
+  padding: 12mm;
+  font-size: 8.4px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .ticket section .ticket-cont .d1, main .ticket section .ticket-cont .d2, main .ticket section .ticket-cont .d3, main .ticket section .ticket-cont .d4, main .ticket section .ticket-cont .d5, main .ticket section .ticket-cont .d6, main .ticket section .ticket-cont .d7, main .ticket section .ticket-cont .d18, main .ticket section .ticket-cont .in-d6 {
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: space-between;
+}
+main .ticket section .ticket-cont .d1 div, main .ticket section .ticket-cont .d2 div, main .ticket section .ticket-cont .d3 div, main .ticket section .ticket-cont .d4 div, main .ticket section .ticket-cont .d5 div, main .ticket section .ticket-cont .d6 div, main .ticket section .ticket-cont .d7 div, main .ticket section .ticket-cont .d18 div, main .ticket section .ticket-cont .in-d6 div {
+  width: 100%;
+}
+main .ticket section .ticket-cont span {
+  display: block;
+}
+main .ticket section .ticket-cont .d3, main .ticket section .ticket-cont .d5 {
+  border: 0.6px solid #224d80;
+  padding: 12px;
+}
+main .ticket section .ticket-cont .d3 span, main .ticket section .ticket-cont .d5 span {
+  padding-left: 6px;
+  border-left: 0.6px solid #224d80;
+}
+main .ticket section .ticket-cont .d3 .border-non, main .ticket section .ticket-cont .d5 .border-non {
+  border: none;
+}
+main .ticket section .ticket-cont .d6 {
+  display: flex;
+  flex-direction: column;
+}
+main .ticket section .ticket-cont .d6 .header {
+  margin: 12px;
+}
+main .ticket section .ticket-cont .d6 .in-d6 {
+  border: 0.6px solid #224d80;
+  padding: 10px;
+}
+main .ticket section .ticket-cont .d6 .in-d6 div {
+  border-right: 0.6px solid #224d80;
+  padding-left: 5px;
+}
+main .ticket section .ticket-cont .d6 .in-d6 .border-non {
+  border: none;
+}
+main .ticket section .ticket-cont .d1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .ticket section .ticket-cont .d1 img {
+  width: 36px;
+  height: 25.45px;
+}
+main .ticket section .ticket-cont .d7 .d7-2 span {
+  text-align: end;
+}
+main .ticket section .get {
+  display: flex;
+  flex-direction: column;
+}
+main .ticket section .get button {
+  border: none;
+  background-color: white;
+  color: #224d80;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 767px) {
+  main form {
+    padding: 20px;
+    flex-direction: column;
+  }
+  main form div input {
+    margin-bottom: 20px;
+    max-width: 1000px;
+  }
+  main form button {
+    padding: 10px;
+  }
+  main .ticket .nSpan {
+    padding: 10px;
+  }
+  main .ticket section {
+    display: none;
+    flex-direction: column-reverse;
+    padding: 20px;
+    padding-bottom: 40px;
+  }
+  main .ticket section .ticket-cont {
+    padding: 20px;
+    width: 100%;
+  }
+  main .ticket section .get {
+    flex-direction: row;
+    justify-content: center;
+  }
+}/*# sourceMappingURL=ticket-check.css.map */

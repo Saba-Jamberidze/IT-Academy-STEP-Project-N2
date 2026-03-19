@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- payment.html — გადახდის გვერდი: ბარათის მონაცემები, ticket register API, წარმატების შემდეგ ბილეთის ჩვენება და ბეჭდვა/გადმოწერა -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./css/style-for-all.css">
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+<body>
+    <nav class="shadow">
+        <a href="#footer" class="nav-link shadow">ინფორმაცია ჩვენს შესახებ</a>
+        <a href="./index.html" class="logo"><img src="./PNG-SVG/TICKET2.svg" alt=""></a>
+        <a href="./ticket-check.html" class="nav-link shadow">ბილეთის შემოწმება/დაბრუნება</a>
+
+        <div class="burger">
+            <span id="burgerIco"><i class="fa-solid fa-bars"></i></span>
+            <div id="burgerNav" class="burger-cont">
+                <span id="burgerIcoX"><i class="fa-solid fa-x"></i></span>
+                <div>
+                    <a class="burger-a shadow" href="./index.html" class="logo"><img src="./PNG-SVG/TICKET.svg" alt=""></a>
+                    <a id="closeNav" class="burger-a shadow" href="#footer">ინფორმაცია ჩვენს შესახებ</a>
+                    <a class="burger-a shadow" href="./ticket-check.html">ბილეთის შემოწმება/დაბრუნება</a> 
+                </div>
+                <div class="ear"></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="nav-cont"></div>
+
+    <main>
+        <!-- first-section — საერთო თანხა (localStorage-დან) -->
+        <section class="first-section shadow">
+            <h1 id="inSectH1">სულ გადასახდელი: <span id="totalToPay">0.00₾</span></h1>
+        </section>
+        <!-- paymentForm — ბარათის ნომერი, ვადა, CVV, მფლობელი -->
+        <form class="shadow" id="paymentForm">
+            <div class="form">
+                <div class="form-cont">
+                    <label for="cardid">ბარათის ნომერი*</label>
+                    <input class="shadow" type="text" id="cardid" placeholder="5555 5555 5555 5555" inputmode="numeric" autocomplete="cc-number" required>
+                    <label for="validityPeriod">მოქმედების ვადა*</label>
+                    <input class="shadow" type="text" id="validityPeriod" placeholder="MM/YY" inputmode="numeric" autocomplete="cc-exp" required>
+                </div>
+                <div class="form-cont">
+                        <label for="cvv">CVC / CVV *</label>
+                        <input class="shadow" type="text" id="cvv" placeholder="CVC" inputmode="numeric" autocomplete="cc-csc" required>
+                        <label for="owner">ბარათის მფლობელი *</label>
+                        <input class="shadow" type="text" id="owner" placeholder="S. JAMBERIDZE" autocomplete="cc-name" required>
+                </div>
+            </div>
+            <span id="paymentStatus" style="display:none; margin-top: 10px;"></span>
+            <div class="btn"><button class="shadow pointer">გადახდა</button></div>
+        </form>
+        <!-- ticketSection — წარმატების შემდეგ ჩანს; ticket — html2canvas-ით იბეჭდება/იგადმოწერება -->
+        <section class="ticket shadow" id="ticketSection">
+            <div class="ticket-cont" id="ticket">
+                <div>
+                    <div class="d1">
+                        <span>Railway</span>
+                        <img src="./PNG-SVG/logo.png" alt="">
+                    </div>
+                    <div class="d2">
+                        <span>
+                            <span>ბილეთის ნომერი: </span><span id="ticketId">----------------------</span>
+                        </span>
+                        <span>
+                            <span>გაცემის თარიღი: </span><span id="issueDate">----------------</span>
+                        </span>
+                    </div>
+                    <div class="d3">
+                        <div>
+                            <span class="border-non">გამგზავრება:</span><span class="border-non" id="fromCity">------------------</span>
+                        </div>
+                        <div>
+                            <span>ჩასვლა:</span><span id="toCity">-------------------</span>
+                        </div>
+                        <div>
+                            <span>გასვლის თარიღი:</span>
+                            <span id="departureDate">------------------</span>
+                        </div>
+                    </div>
+                    <span class="d4">საკონტაქტო ინფორმაცია:</span>
+                    <div class="d5">
+                        <div>
+                            <span class="border-non">იმეილი: </span><span class="border-non" id="contactEmail">--------------------------</span>
+                        </div>
+                        <div>
+                            <span>ტელ. ნომერი: </span><span id="contactPhone">-----------------------</span>
+                        </div>
+                    </div>
+                    <div class="d6">
+                        <span class="header">მგზავრები:</span>
+                        <!-- passengersBox — JS ავსებს API პასუხიდან მგზავრების მონაცემებით -->
+                        <div id="passengersBox">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d7">
+                        <div class="d7-1">
+                            <span>Payment info:</span>
+                            <span id="peimentInfo">---------------------------</span>
+                            <span>Credit Card -</span>
+                            <span id="cardMasked">----------------</span>
+                        </div>
+                        <div class="d7-2">
+                            <span>სულ გადახდილი</span>
+                            <span id="totalPaid">----------------------------</span>
+                        </div>
+                    </div>
+                    <div class="d8">
+                        <span>ინვოისი იქმნება კომპიუტერის მიერ და ვალიდურია ბეჭედის და ხელმოწერის გარეშე</span>
+                        <span>გადმოწერეთ ბილეთი ან შეინახეთ ბილეთის ნომერი ადგილზე წარსადგენად.</span>
+                    </div>
+                </div>
+            </div>
+            <div class="get">
+                <button class="pointer" onclick="printDiv()"><i class="fa-solid fa-print"></i></button>
+                <button class="pointer" onclick="downloadDiv()"><i class="fa-solid fa-download"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <h2>ინფორმაცია ჩვენს შესახებ</h1>
+        <div class="footer-cont">
+            <div>
+                <p>Director: Saba Jamberidze</p>
+                <p>All rights reserved</p>
+            </div>
+            <div>
+                <p class="footer-p-2">IT Academy STEP Project N2</p>
+                <p class="footer-p-2">Copyright © 2026</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script src="./js/script-nav.js"></script>
+    <script src="./js/payment.js"></script>
+</body>
+</html>
