@@ -70,6 +70,10 @@ let apiSeatIds = {
     'ბიზნესი': {}
 }
 
+console.log(apiOccupiedSeats);
+console.log(apiSeatPrices);
+console.log(apiSeatIds);
+
 function renameCity(fromORto) {
     if (fromORto === "თბილისი") return "%E1%83%97%E1%83%91%E1%83%98%E1%83%9A%E1%83%98%E1%83%A1%E1%83%98"
     if (fromORto === "ბათუმი") return "%E1%83%91%E1%83%90%E1%83%97%E1%83%A3%E1%83%9B%E1%83%98"

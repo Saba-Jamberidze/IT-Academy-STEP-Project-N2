@@ -112,3 +112,7 @@ if (document.readyState === 'loading') {
 } else {
     displayTickets();
 }
+
+// "loading"	HTML ჯერ იტვირთება
+// "interactive"	HTML უკვე ჩაიტვირთა
+// "complete"	ყველაფერი (images, css…) დასრულებულია

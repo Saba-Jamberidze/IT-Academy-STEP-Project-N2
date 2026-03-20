@@ -57,7 +57,7 @@ const toOptions = { "თბილისი": tbilisiTo, "ბათუმი": ba
 function setOptionEnabled(option, enabled) {
     if (!option) return
     option.style.pointerEvents = enabled ? "" : "none"
-    option.style.opacity = enabled ? "1" : "0.4"
+    option.style.opacity = enabled ? "1" : "0.6"
 }
 
 // არ ვაძლევთ მომხმარებელს იგივე ქალაქის არჩევას ორივე მხარეს.

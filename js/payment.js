@@ -90,7 +90,7 @@ function makeChanges(a){
 
     const passengersBox = document.getElementById('passengersBox')
     
-    for (let i = 0; i < Object.keys(a.persons).length; i++) {
+    for (let i = 0; i < a.persons.length; i++) {
         const person = a.persons[i];
 
         const psangers = document.createElement("div")

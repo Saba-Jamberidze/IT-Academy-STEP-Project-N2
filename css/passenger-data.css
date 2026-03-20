@@ -178,6 +178,7 @@ main .second-section .pey button {
   padding: 10px;
   margin: 0 10px;
 }
+
 .Choose-a-seat {
   display: none;
   z-index: 9999;
@@ -203,6 +204,8 @@ main .second-section .pey button {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  top: calc(50vh - 234.06px);
+  left: calc(50vw - 150px);
 }
 .Choose-a-seat .mein-information-div .train-vagons {
   flex-shrink: 0;
@@ -288,10 +291,6 @@ main .second-section .pey button {
   border-right: 4px solid #224d80;
   border-radius: 0px 20px 20px 0px;
   overflow: hidden;
-}
-.Choose-a-seat .mein-information-div {
-  top: calc(50vh - 234.06px);
-  left: calc(50vw - 150px);
 }
 
 @media (max-width: 767px) {

@@ -107,6 +107,14 @@ main, .burger-cont {
     transform: scaleY(1);
   }
 }
+@media (max-width: 767px) {
+  .slide {
+    transform-origin: top;
+    transform: none;
+    opacity: 0;
+    animation: fadeInGlobal 0.3s ease forwards;
+  }
+}
 main {
   padding: 0 10px;
 }
